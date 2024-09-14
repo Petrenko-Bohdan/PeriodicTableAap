@@ -1,0 +1,9 @@
+.equal-width-table th, .equal-width-table td {
+  width: 20%; 
+  text-align: center; 
+  padding: 8px; 
+}
+
+.actions-header, .actions-cell {
+  width: auto;
+}
