@@ -8,15 +8,21 @@ import { ELEMENT_DATA } from '../../assets/data';
 })
 export class ElementDataService {
   private elementSubject = new BehaviorSubject<PeriodicElement[]>([]);
-	public elements$ = this.elementSubject.asObservable();
+  public elements$ = this.elementSubject.asObservable();
 
-  constructor() {
-    this.loadElements();
-  }
-
-  private loadElements() {
+  public loadElements() {
     setTimeout(() => {
       this.elementSubject.next(ELEMENT_DATA);
     }, 2000);
   }
+
+	updateElement(updatedElement: PeriodicElement){
+		const elements = this.elementSubject.getValue();
+		const index = elements.findIndex(e=>e.position === updatedElement.position);
+
+		if(index !== -1){
+			elements[index] = updatedElement;
+			this.elementSubject.next(elements);
+		}
+	}
 }
