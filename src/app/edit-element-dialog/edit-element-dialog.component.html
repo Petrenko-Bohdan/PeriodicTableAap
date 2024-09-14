@@ -1,1 +1,24 @@
-<p>edit-element-dialog works!</p>
+<div class="edit-element__container">
+	<h1 mat-dialog-title>Edit Element</h1>
+	<div mat-dialog-container >
+		<form [formGroup]="form" class="edit-element__inputs">
+			<mat-form-field>
+				<mat-label>Name</mat-label>
+				<input matInput formControlName="name" />
+			</mat-form-field>
+			<mat-form-field>
+				<mat-label>Weight</mat-label>
+				<input matInput formControlName="weight" />
+			</mat-form-field>
+			<mat-form-field>
+				<mat-label>Symbol</mat-label>
+				<input matInput formControlName="symbol" />
+			</mat-form-field>
+		</form>	
+	</div>
+	<div mat-dialog-actions>
+		<button mat-button (click)="onClose()">Close</button>
+		<button mat-button (click)="onSave()">Save</button>
+	</div>
+</div>
+
