@@ -15,7 +15,6 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [RouterOutlet, PeriodicTableComponent, EditElementDialogComponent, CommonModule, MatTableModule, MatInputModule, MatButtonModule, MatDialogModule, FormsModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
 })
 export class AppComponent {
   
