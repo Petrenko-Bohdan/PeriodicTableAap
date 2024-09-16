@@ -27,7 +27,7 @@ export class PeriodicTableComponent implements OnInit {
     'actions',
   ];
   public dataSource: Observable<PeriodicElement[]>;
-	public filterControl = new FormControl('');
+  public filterControl:FormControl = new FormControl('');
   private ngUnsubscribe = new Subject<void>();
 
   constructor(
@@ -36,8 +36,7 @@ export class PeriodicTableComponent implements OnInit {
   ) {
     this.dataSource = this.elementDataService.elements$;
 
-		this.filterControl.valueChanges.pipe(debounceTime(2000),
-		distinctUntilChanged()
+		this.filterControl.valueChanges.pipe(distinctUntilChanged()
 		).subscribe(searchTerm => {
 			this.elementDataService.setFilter(searchTerm ?? '');
 		})
